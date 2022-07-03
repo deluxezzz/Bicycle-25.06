@@ -21,35 +21,24 @@ body {
     font-size: 16px;
     color: #848789;
 }
+
 .header {
-    max-width: 1600px;
-    height: 800px;
-    display: flex;
-    justify-content: center;
-    position: relative;
-    &__container {
-        flex: 1 0 auto;
-        width: 100%;
-        height: 100%;
-        background: url("../img/header__bg.jpeg") center no-repeat;
-        background-size: cover;
-        position: absolute;
-        top: 0;
-        left: 0;
-    }
-    &__nav {
-        padding-top: 30px;
+    max-width: 100%;
+    height: 100%;
+    background-color: #e9e9f0;
+    background: url("../img/header__bg.jpeg") center / cover no-repeat;
+    &__container{
         display: flex;
         justify-content: center;
+    }
+    &__nav {
+        margin-top: 30px;
+        width: 670px;
+        padding: 0 20px;
+        display: flex;
+        justify-content: space-between;
         align-items: center;
     }
-    &__logo {
-        width: 94px;
-        height: 85px;
-        background: url("../img/logo/header__logo.png") no-repeat;
-        margin: 0 24px;
-    }
-
     &__link {
         font-size: 13px;
         line-height: 1.2;
@@ -57,10 +46,11 @@ body {
         text-transform: uppercase;
         letter-spacing: 0.2em;
         color: #4d4959;
-        flex: 0 0 auto;
-        padding: 0 32px;
+        text-align: center;
     }
 }
+
+
 .icon {
     text-align: center;
 }
@@ -75,28 +65,54 @@ body {
     color: #353738;
     text-align: center;
     padding-top: 20px;
+    // увеличение шрифта на экранах 1600px+
+    @media (min-width: 1600px){
+        font-size: calc(12px + (18 - 12) * ((100vw - 320px) / (1600 - 320)));
+    }
 }
 .text {
+    display: block;
+    font-size: 16px;
     line-height: 30px;
     text-align: justify;
     padding-top: 10px;
     color: #848789;
-}
-.preview {
-    background-color: #f7f7f7;
-    &__container {
-        max-width: 1130px;
-        text-align: center;
-        margin: 0 auto;
-    }
-    &__text {
-        font-size: 18px;
-        text-align: center;
-        line-height: 34px;
+    // увеличение шрифта на экранах 1600px+
+    @media (min-width: 1600px){
+        font-size: calc(5px + (16 - 5) * ((100vw - 320px) / (1600 - 320)));
+        line-height: 40px;
     }
 }
+
 .block_flex {
     display: flex;
+    @media (max-width:767px){
+        & {
+            flex-direction: column;
+        }
+    }
+}
+.preview {
+    padding: 0 calc(0px + (250 - 0) * ((100vw - 768px) / (1600 - 768))) 30px;
+
+    background-color: #f7f7f7;
+    &__container {
+        text-align: center;
+        margin: 0 auto;
+        @media (min-width: 1600px){
+            max-width: 1680px;
+        }
+    }
+    &__text {
+        font-size: 16px;
+        text-align: center;
+        line-height: 34px;
+        
+        @media (min-width: 1600px){
+            font-size: calc(5px + (16 - 5) * ((100vw - 320px) / (1600 - 320)));
+            line-height: 40px;
+        }
+    }
 }
 .block-1 {
     &__left {
@@ -109,17 +125,21 @@ body {
     &__right {
         flex: 1 1 33.33%;
         max-width: 100%;
-        &-img {
-            max-width: 100%;
-        }
+        display: flex;
+        flex-direction: column;
+    }
+    &__img {
+        width: 100%;
     }
 }
 .block-2 {
     &__left {
         flex: 1 1 33%;
+        display: flex;
+        flex-direction: column;
     }
     &__img {
-        max-width: 100%;
+        width: 100%;
     }
     &__right {
         flex: 1 1 66%;
@@ -127,6 +147,7 @@ body {
         display: flex;
         justify-content: center;
         align-items: center;
+        
     }
 }
 .block-3 {
@@ -142,12 +163,11 @@ body {
     }
     &__center{
         flex: 1 1 33.33%;
-        &__info {
-            padding: calc(15px + (50 - 15) * ((100vw - 320px) / (1600 - 320)));
-        }
-        &__img img{
-            max-width: 100%;
-        }
+        display: flex;
+        flex-direction: column;
+    }
+    &__img {
+        width: 100%;
     }
     &__right{
         max-width: 100%;
@@ -169,6 +189,9 @@ body {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        @media (max-width:767px){
+            flex-direction: column;
+        }
     }
 
     &__contacts {
