@@ -22,17 +22,20 @@ body {
     color: #848789;
 }
 
+
+
+
 .header {
     max-width: 100%;
     height: 100%;
     background-color: #e9e9f0;
     background: url("../img/header__bg.jpeg") center / cover no-repeat;
+    padding: 30px 0 0 0;
     &__container{
         display: flex;
         justify-content: center;
     }
     &__nav {
-        margin-top: 30px;
         width: 670px;
         padding: 0 20px;
         display: flex;
@@ -40,6 +43,7 @@ body {
         align-items: center;
     }
     &__link {
+        padding: 2px;
         font-size: 13px;
         line-height: 1.2;
         font-weight: 700;
@@ -49,8 +53,58 @@ body {
         text-align: center;
     }
 }
+// .burger {
+//    display: none;
+//     @media(max-width:768px){
+//         display: flex;
+//         flex-direction: column;
+//         justify-content: flex-start;
+//         overflow: auto;
 
+//         position: fixed;
+//         top: 0;
+//         left: 0;
+//         z-index: 100;
 
+//         width: 100%;
+//         height: 100%;
+
+//         background-color: #353738;
+//     }
+//     &__nav {
+//         width: 670px;
+//         padding: 0 20px;
+//         display: flex;
+//         justify-content: space-between;
+//         align-items: center;
+//         padding: 15px;
+//     }
+//     &__link {
+//         padding: 2px;
+//         font-size: 13px;
+//         line-height: 1.2;
+//         font-weight: 700;
+//         text-transform: uppercase;
+//         letter-spacing: 0.2em;
+//         color: #4d4959;
+//         text-align: center;
+        
+//         @media(max-width: 768px){
+//             padding: 15px 10px;
+//             margin: 5px 0;
+//             font-size: 18px;
+//             color: #9994a8;
+//         }
+//     }
+//     &__logo {
+//         @media(max-width: 768px){
+//             order: -100;
+//             img {
+//                 margin-bottom: 25px;
+//             }
+//         }
+//     }
+// }
 .icon {
     text-align: center;
 }
@@ -86,7 +140,7 @@ body {
 
 .block_flex {
     display: flex;
-    @media (max-width:767px){
+    @media (max-width:768px){
         & {
             flex-direction: column;
         }
@@ -189,7 +243,7 @@ body {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        @media (max-width:767px){
+        @media (max-width:768px){
             flex-direction: column;
         }
     }
@@ -211,12 +265,20 @@ body {
             font-size: 13.9px;
             font-style: italic;
         }
+        @media (max-width:768px){
+            text-align: center;
+            margin-bottom: 10px;
+            line-height: 17px;
+        }
     }
 
     &__social {
         flex: 0 0 20%;
         display: flex;
         justify-content: center;
+        @media (max-width:768px){
+            margin-bottom: 10px;
+        }
         a {
             margin: 0px 6px;
         }
