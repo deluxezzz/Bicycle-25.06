@@ -76,8 +76,9 @@ body {
   font-family: "Lato", sans-serif;
   font-size: 16px;
   color: #848789;
+  /*Отключение прокрутки при раскрытом менню в бургере*/
 }
-body._asd {
+body._lock {
   overflow: hidden;
 }
 
@@ -98,6 +99,8 @@ body._asd {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  /*Меню для тачскрин-устройств*/
+  /*Включение меню при клике на бургер*/
 }
 @media (max-width: 768px) {
   .header__nav {
@@ -112,10 +115,11 @@ body._asd {
     width: 100%;
     height: 100%;
     background-color: #353738;
-    transform: translate(-100%, 0px);
+    transform: translate(100%, 0px);
   }
 }
 .header__nav._mobile {
+  transition: transform 0.2s ease-in;
   transform: translate(0px, 0px);
 }
 .header__link {
@@ -163,7 +167,7 @@ body._asd {
     display: flex;
   }
 }
-.burger__span {
+.burger__line {
   background-color: black;
   height: 2px;
 }
@@ -241,14 +245,17 @@ body._asd {
 }
 
 .block-1__left {
-  flex: 1 1 66.66%;
+  flex: 1 1 66.666%;
   background: url("../img/block-1__bg.jpeg") 0 0/cover no-repeat;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+.block-1__left img {
+  padding: 15px;
+}
 .block-1__right {
-  flex: 1 1 33.33%;
+  flex: 1 1 33.333%;
   max-width: 100%;
   display: flex;
   flex-direction: column;
@@ -258,7 +265,7 @@ body._asd {
 }
 
 .block-2__left {
-  flex: 1 1 33%;
+  flex: 1 1 33.333%;
   display: flex;
   flex-direction: column;
 }
@@ -266,25 +273,35 @@ body._asd {
   width: 100%;
 }
 .block-2__right {
-  flex: 1 1 66%;
+  flex: 1 1 66.666%;
   background: url("../img/block-2__bg.jpeg") center/cover no-repeat;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+@media (max-width: 768px) {
+  .block-2__right {
+    display: none;
+  }
+}
 
 .block-3__left {
-  flex: 1 1 33.33%;
+  flex: 1 1 33.333%;
   background: url("../img/block-3__bg-1.jpeg") 0 0/cover no-repeat;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+@media (max-width: 768px) {
+  .block-3__left {
+    display: none;
+  }
+}
 .block-3__logo {
   display: block;
 }
 .block-3__center {
-  flex: 1 1 33.33%;
+  flex: 1 1 33.333%;
   display: flex;
   flex-direction: column;
 }
@@ -293,7 +310,7 @@ body._asd {
 }
 .block-3__right {
   max-width: 100%;
-  flex: 1 1 33.33%;
+  flex: 1 1 33.333%;
   background: url("../img/block-3__bg-2.jpeg") center/cover no-repeat;
 }
 
