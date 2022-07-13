@@ -72,6 +72,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /*--------------------*/
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "Lato", sans-serif;
   font-size: 16px;
@@ -107,19 +111,18 @@ body._lock {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    width: 100%;
+    height: 100%;
     overflow: auto;
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 100;
-    width: 100%;
-    height: 100%;
-    background-color: #353738;
-    transform: translate(100%, 0px);
+    z-index: 5;
+    background-color: rgba(75, 71, 87, 0.9);
+    transform: translate(0, -100%);
   }
 }
 .header__nav._mobile {
-  transition: transform 0.2s ease-in;
   transform: translate(0px, 0px);
 }
 .header__link {
@@ -142,7 +145,7 @@ body._lock {
 }
 @media (max-width: 768px) {
   .header__logo {
-    order: -100;
+    order: -10;
   }
   .header__logo img {
     margin-bottom: 25px;
@@ -153,14 +156,15 @@ body._lock {
   padding: 5px;
   width: 35px;
   height: 30px;
-  position: absolute;
-  top: 30px;
-  right: 30px;
-  z-index: 100;
+  position: fixed;
+  right: 20px;
+  top: 20px;
+  z-index: 10;
   display: none;
   flex-direction: column;
   justify-content: space-between;
   cursor: pointer;
+  /* Появление бургера */
 }
 @media (max-width: 768px) {
   .burger {
