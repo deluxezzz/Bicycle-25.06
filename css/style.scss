@@ -74,7 +74,10 @@ body {
         letter-spacing: 0.2em;
         color: #4d4959;
         text-align: center;
-        
+        transition: 0.1s text-shadow ease-in-out;
+        &:hover{
+            text-shadow: 1px 1px 1px rgb(0, 0, 0, 0.5);
+        }
         @media(max-width: 768px){
             padding: 15px 10px;
             margin: 5px 0;
@@ -297,7 +300,13 @@ body {
         }
         a {
             margin: 0px 6px;
+            border-radius: 50%;
+            transition: 0.2s background-color ease-in-out;
+            &:hover {
+                background-color: #1873a0;
+            }
         }
+        
     }
 
     &__made {

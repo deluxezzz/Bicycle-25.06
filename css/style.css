@@ -134,6 +134,10 @@ body._lock {
   letter-spacing: 0.2em;
   color: #4d4959;
   text-align: center;
+  transition: 0.1s text-shadow ease-in-out;
+}
+.header__link:hover {
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
 }
 @media (max-width: 768px) {
   .header__link {
@@ -376,6 +380,11 @@ body._lock {
 }
 .footer__social a {
   margin: 0px 6px;
+  border-radius: 50%;
+  transition: 0.2s background-color ease-in-out;
+}
+.footer__social a:hover {
+  background-color: #1873a0;
 }
 .footer__made {
   flex: 1 1 20%;
